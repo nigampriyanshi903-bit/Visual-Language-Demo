@@ -12,7 +12,7 @@ The entire application is deployed via Streamlit for an interactive user experie
 The image-captioning dataset used for this project was sourced from **Kaggle**. 
 Users wishing to replicate the fine-tuning process or feature extraction must download the dataset from the following link:
 
-**[Kaggle Dataset Name]**: <https://www.kaggle.com/datasets/adityajn105/flickr8k?utm_source=chatgpt.com>
+**[Kaggle Dataset Name]**: <https://www.kaggle.com/datasets/adityajn105/flickr8k>
 
 ### Large Assets (Not Included in Repository)
 Due to size constraints (GitHub limit is 100MB), the following large assets were **NOT** uploaded to this repository but are essential for running the Streamlit app:
