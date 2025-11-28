@@ -1,0 +1,4 @@
+### Data Source
+The image-captioning dataset used for this project was sourced from **Kaggle**. 
+Users wishing to replicate the fine-tuning process or feature extraction must download the dataset from the following link:
+  
