@@ -1,2 +1,69 @@
-# Visual-Language-Demo
+# Visual-Language Model Demo: Fine-tuned BLIP and CLIP Integration
+
 A multimodal project demonstrating Image Captioning using a 5-step fine-tuned BLIP model, integrated with CLIP for efficient Text-to-Image semantic retrieval. Hosted via Streamlit for an interactive demo
+
+This repository hosts a comprehensive project demonstrating the synergy between two prominent visual-language models: **BLIP (Bootstrapping Language-Image Pre-training)** for image captioning and **CLIP (Contrastive Language–Image Pre-training)** for semantic search/retrieval.
+
+The entire application is deployed via Streamlit for an interactive user experience.
+
+---
+
+## Project Overview and Demo
+
+The core objective of this project was to implement, fine-tune, evaluate, and deploy an end-to-end multimodal solution.
+
+### 1. Image Captioning (BLIP)
+A base BLIP model was fine-tuned on a custom dataset (although limited to 5 steps for demonstration) to improve its ability to generate descriptive captions for images. This process enhances the model's domain specificity.
+
+### 2. Semantic Search (CLIP)
+The pre-trained CLIP model is utilized to convert both text queries and a library of 500 reference images into high-dimensional embedding vectors. The Streamlit application then performs a fast nearest-neighbor search (cosine similarity) to retrieve images semantically similar to the user's text query.
+
+### 3. Streamlit Deployment
+A live, interactive web application is provided for real-time testing of both the fine-tuned captioning and the image retrieval system.
+
+---
+
+##  Repository Structure
+
+| File/Folder | Description | Status in Project |
+| :--- | :--- | :--- |
+| `app.py` | **The main Streamlit application file.** Contains all logic for model loading, feature extraction, captioning, and UI design. | Complete |
+| `Data Loading and Preprocessing.ipynb` | Notebook 1: Code for setting up the environment and initial data preparation. | Complete |
+| `Model setup and fine tuning.ipynb` | Notebook 2: The core notebook for loading the BLIP model and executing the limited fine-tuning process. | Complete |
+| `Model Evaluation.ipynb` | Notebook 3: Calculation of **BLEU-4**, **METEOR** (for captioning), and **Recall@K** (for retrieval) metrics. | Complete |
+| `Deployment.ipynb` (or similar) | Notebook 4: Code used for pre-calculating and saving CLIP features for the demo. | Complete |
+| `blip_finetuned_captioner.pth` | The saved, fine-tuned weights for the BLIP model. (**Note:** Due to large size, this file may not be hosted directly on GitHub without Git LFS.) | Generated (~896MB)|
+| `test_features.pt` | Pre-calculated CLIP features for the 500 images used in the semantic search demo. | Generated (~303MB)|
+
+---
+
+## Evaluation Results Summary
+
+Evaluation was conducted on a limited set of 40 samples from the test dataset.
+
+### Image Captioning Metrics (BLIP)
+| Metric | Result | Context |
+| :--- | :--- | :--- |
+| **Average BLEU-4 Score** | 0.0237 | Low score is expected due to the extremely limited 5-step training. |
+| **Average METEOR Score** | 0.2585 | Better reflection of semantic overlap compared to BLEU. |
+
+### Image Retrieval Metrics (CLIP)
+| Metric | Result | Context |
+| :--- | :--- | :--- |
+| **Recall@1** | 0.0000 | The exact match was not found in the top 1 result. |
+| **Recall@5** | 0.0250 | 1 out of 40 images returned the correct match within the top 5 results. |
+
+---
+
+## How to Run the Demo Locally
+
+1.  **Clone the repository:** Download the code files.
+2.  **Download Assets:** Manually place `blip_finetuned_captioner.pth` and `test_features.pt` into the main directory (if they were too large for GitHub upload).
+3.  **Install Dependencies:** Ensure all required libraries (PyTorch, Transformers, Streamlit, PIL, NumPy) are installed.
+4.  **Run the Streamlit App:** Navigate to the project directory in your terminal and execute:
+
+    ```bash
+    streamlit run app.py
+    ```
+
+5.  The application will open automatically in your browser on `http://localhost:8501`.
