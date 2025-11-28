@@ -28,10 +28,10 @@ A live, interactive web application is provided for real-time testing of both th
 | File/Folder | Description | Status in Project |
 | :--- | :--- | :--- |
 | `app.py` | **The main Streamlit application file.** Contains all logic for model loading, feature extraction, captioning, and UI design. | Complete |
-| `Data Loading and Preprocessing.ipynb` | Notebook 1: Code for setting up the environment and initial data preparation. | Complete |
-| `Model setup and fine tuning.ipynb` | Notebook 2: The core notebook for loading the BLIP model and executing the limited fine-tuning process. | Complete |
-| `Model Evaluation.ipynb` | Notebook 3: Calculation of **BLEU-4**, **METEOR** (for captioning), and **Recall@K** (for retrieval) metrics. | Complete |
-| `Deployment.ipynb` (or similar) | Notebook 4: Code used for pre-calculating and saving CLIP features for the demo. | Complete |
+| `Data Loading and Preprocessing` |Code for setting up the environment and initial data preparation. | Complete |
+| `Model setup and fine tuning` |The core notebook for loading the BLIP model and executing the limited fine-tuning process. | Complete |
+| `Model Evaluation` | Calculation of **BLEU-4**, **METEOR** (for captioning), and **Recall@K** (for retrieval) metrics. | Complete |
+| `Deployment`| Code used for pre-calculating and saving CLIP features for the demo. | Complete |
 | `blip_finetuned_captioner.pth` | The saved, fine-tuned weights for the BLIP model. (**Note:** Due to large size, this file may not be hosted directly on GitHub without Git LFS.) | Generated (~896MB)|
 | `test_features.pt` | Pre-calculated CLIP features for the 500 images used in the semantic search demo. | Generated (~303MB)|
 
